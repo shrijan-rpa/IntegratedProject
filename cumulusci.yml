@@ -1,0 +1,26 @@
+minimum_cumulusci_version: '3.45.0'
+project:
+    name: IntegratedProject
+    package:
+        name: IntegratedProject
+        api_version: '52.0'
+    dependencies:
+        - github: 'https://github.com/SalesforceFoundation/EDA'
+    git:
+    source_format: sfdx
+
+tasks:
+    robot:
+        options:
+            suites: robot/IntegratedProject/tests
+            options:
+                outputdir: robot/IntegratedProject/results
+
+    robot_testdoc:
+        options:
+            path: robot/IntegratedProject/tests
+            output: robot/IntegratedProject/doc/IntegratedProject_tests.html
+
+    run_tests:
+        options:
+            required_org_code_coverage_percent: 75
